@@ -3,7 +3,6 @@ name: Source Workflow
 on:
   push:
     branches: [ main ]
-
 jobs:
   trigger_workflow:
     runs-on: ubuntu-latest
