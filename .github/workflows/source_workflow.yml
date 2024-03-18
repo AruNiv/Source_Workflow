@@ -8,6 +8,10 @@ on:
 jobs:
   trigger_workflow:
     runs-on: ubuntu-latest
+    env: 
+      pat_token: ${{ secrets.Token }}
+      parameter1: '42574587345'
+      parameter2: 'TestStringWithoutSpace'
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
@@ -20,8 +24,7 @@ jobs:
           owner: AruNiv
           repo: Target_Workflow
           github_token: ${{ secrets.Token }}
-          parameter1: '42574587345'
-          parameter2: 'TestStringWithoutSpace'
+          
           workflow_file_name: target_workflow.yml
           ref: main
           wait_interval: 10
