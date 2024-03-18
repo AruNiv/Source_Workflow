@@ -18,7 +18,7 @@ jobs:
         with:
           owner: AruNiv
           repo: Target_Workflow
-          github_token: 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
+          github_token: ${{ secrets.Token }}
           workflow_file_name: target_workflow.yml
           ref: main
           wait_interval: 10
