@@ -3,15 +3,19 @@ name: Source Workflow
 on:
   push:
     branches: [ main ]
-  
-
+    
 jobs:
-  trigger_workflow:
+  build:
     runs-on: ubuntu-latest
     env: 
-      pat_token: ${{ secrets.Token }}
-      parameter1: '42574587345'
-      parameter2: 'TestStringWithoutSpace'
+      pat_token: ${{ secrets.PAT_TOKEN_GITHUB }}
+      parameter1: 'Feat'
+      parameter2: 'V3.0.0'
+    steps:
+      - uses: actions/checkout@v3  
+
+  trigger_workflow:
+    runs-on: ubuntu-latest
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
